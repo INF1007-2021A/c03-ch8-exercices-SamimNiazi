@@ -24,6 +24,10 @@ def triple_espace (fichier1, fichier2):
             else:
                 file2.write ("   ")
 
+def pourcentage_en_lettre(fichier_de_note, fichier_avec_mentions ):
+    with open(fichier_de_note, "r", encoding = "utf-8") as file1, open(fichier_avec_mentions, "w", encoding = "utf-8") as file2:
+
+
 
 
 
