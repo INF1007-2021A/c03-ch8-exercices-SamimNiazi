@@ -26,12 +26,31 @@ def triple_espace (fichier1, fichier2):
 
 def pourcentage_en_lettre(fichier_de_note, fichier_avec_mentions ):
     with open(fichier_de_note, "r", encoding = "utf-8") as file1, open(fichier_avec_mentions, "w", encoding = "utf-8") as file2:
+        
+        liste_de_note = file1.read().splitlines()
+        for note in liste_de_note:
+            if int(note) >= 95 and int(note) < 101:
+                file2.write(note + " A*\n")
+            elif int(note) >= 90 and int(note) <95:
+                file2.write(note + " A \n")
+            elif int(note) >= 85 and int(note) <90:
+                file2.write(note + " B+ \n")
+            elif int(note) >= 80 and int(note) <85:
+                file2.write(note + " B \n")
+            elif int(note) >= 75 and int(note) <80:
+                file2.write(note + " C+ \n")
+            elif int(note) >= 70 and int(note) <75:
+                file2.write(note + " C \n")
+            else:
+                file2.write(note +  " F \n")
+
 
 
 
 
 
 if __name__ == '__main__':
-    print(lecture_fichier ("fichier1","fichier2"))
-    print(triple_espace("fichier1", "fichier2"))
+    # print(lecture_fichier ("fichier1","fichier2"))
+    # print(triple_espace("fichier1", "fichier2"))
+    print(pourcentage_en_lettre("./notes.txt", "fichier1"))
     pass
