@@ -44,6 +44,10 @@ def pourcentage_en_lettre(fichier_de_note, fichier_avec_mentions ):
             else:
                 file2.write(note +  " F \n")
 
+def nombre_croissant():
+    with open("exemple.txt", "r", encoding = "utf-8") as exemple:
+        ligne_exemple = exemple.read()
+        print(ligne_exemple)
 
 
 
@@ -53,4 +57,5 @@ if __name__ == '__main__':
     # print(lecture_fichier ("fichier1","fichier2"))
     # print(triple_espace("fichier1", "fichier2"))
     print(pourcentage_en_lettre("./notes.txt", "fichier1"))
+    print(nombre_croissant())
     pass
